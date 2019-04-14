@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["es5", "es6", "dom", "es2017"],
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "isolatedModules": true,
+    "paths": {
+        "@common": ["src/common"],
+        "@common/*": ["src/common/*"],
+        "@index/*": ["src/index/*"],
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

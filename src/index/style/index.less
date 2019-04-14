@@ -1,0 +1,194 @@
+html,
+body {
+  background: #2989fe;
+}
+
+.index-page-container {
+  position: relative;
+  padding-bottom: 20px;
+
+  .header {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    z-index: 20;
+
+    .logo {
+      height: 40px;
+      transition: all 400ms ease;
+    }
+
+    .search-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px;
+
+      .search-bar-input {
+        width: 100%;
+        height: 40px;
+        padding-left: 20px;
+        border: none;
+        outline: 0;
+        color: #fff;
+        font-size: 14px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 40px;
+        transition: all 400ms ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .search-bar-icon {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 27px;
+        top: 22px;
+        opacity: 0.8;
+
+        &.search-bar-icon-close {
+          width: 20px;
+          height: 20px;
+          top: 25px;
+        }
+      }
+
+      &.search-bar-actived {
+        .search-bar-input {
+          opacity: 1;
+          pointer-events: visible;
+        }
+      }
+    }
+
+    &.hide-logo {
+      .logo {
+        opacity: 0;
+      }
+    }
+  }
+
+  // 防止误触
+  .input-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .app-category {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    h2 {
+      margin-left: 15px;
+      font-size: 16px;
+      font-weight: normal;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .app-list {
+      margin-top: 15px;
+      padding-left: 15px;
+      max-width: 100%;
+      display: flex;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+
+      .app-item {
+        position: relative;
+        width: 100px;
+        height: 130px;
+        margin-right: 15px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 150ms ease;
+        overflow: hidden;
+
+        .app-icon-bg {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .app-icon {
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+        .app-name {
+          margin-top: 10px;
+          margin-bottom: 0;
+          font-size: 14px;
+          color: #999;
+        }
+
+        .not-open {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          font-size: 18px;
+          color: rgba(255, 255, 255, 0.6);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &:active {
+          background: #f5f7fa;
+          box-shadow: none;
+        }
+      }
+
+      // 为了让右边能有 padding
+      .placeholder {
+        width: 1px;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      &::-webkit-scrollbar {
+        width: 0 !important;
+        display: none;
+      }
+    }
+  }
+
+  // 空列表
+  .empty-list {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+
+    .emotion {
+      width: 50px;
+      height: 50px;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}

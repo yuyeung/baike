@@ -1,0 +1,15 @@
+node_modules
+demo/
+.idea/
+.vscode/
+run/
+logs/
+.awcache/
+stats.json
+npm-debug.log
+yarn-error.log
+coverage/
+dist/
+.DS_Store
+*.sw*
+*.un~
